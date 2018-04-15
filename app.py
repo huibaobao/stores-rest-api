@@ -13,9 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'EiEiO'
 api = Api(app)
 
-@app.before_first_request  # flask decorator
-def create_tables():
-    db.create_all()  # create all the tables in the file unless it exists already. it come with SQLALCHEMY
+  
 
 jwt = JWT(app, authenticate, identity)  # /auth
 
